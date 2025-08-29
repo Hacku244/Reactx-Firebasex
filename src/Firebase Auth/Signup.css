@@ -1,0 +1,115 @@
+/* Page Wrapper for Signup only */
+.signup-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  font-family: "Poppins", sans-serif;
+}
+
+/* Signup Container */
+.signup-container {
+  width: 100%;
+  max-width: 400px;
+  padding: 30px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.3);
+  backdrop-filter: blur(10px);
+  color: white;
+  animation: fadeIn 0.7s ease-in-out;
+}
+
+/* Form */
+.signup-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.signup-form h2 {
+  margin-bottom: 10px;
+  font-size: 28px;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 20px;
+  opacity: 0.8;
+}
+
+.signup-form input {
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  transition: all 0.3s;
+}
+
+.signup-form input:focus {
+  box-shadow: 0 0 10px #667eea;
+}
+
+/* Button */
+.signup-form button {
+  margin-top: 15px;
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, opacity 0.3s;
+}
+
+.signup-form button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.signup-form button:disabled {
+  background: gray;
+  cursor: not-allowed;
+}
+
+/* Error message */
+.error {
+  color: #ff6b6b;
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+/* Login link */
+.login-link {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.login-link span {
+  color: #ffdd59;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.login-link span:hover {
+  text-decoration: underline;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
