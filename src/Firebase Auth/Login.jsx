@@ -67,7 +67,7 @@ export default Login*/
 
 // Login.jsx
 import React, { useState } from "react";
-import { getAuth, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, FacebookAuthProvider } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, FacebookAuthProvider, TwitterAuthProvider } from "firebase/auth";
 import { app } from "../Firebase";
 import { useNavigate } from "react-router-dom";
 import "./Auth.css"; // CSS file
@@ -105,6 +105,7 @@ const Login = () => {
         console.log(error);
       })
     }
+    // Facebook login
    const LoginWithFacebook = () => {
              const auth = getAuth(app);
       const provider = new FacebookAuthProvider()
@@ -117,6 +118,20 @@ const Login = () => {
         console.log(error);
       })
    }
+     
+   // Twitter login 
+        const LoginWithTwitter = () => {
+      const auth = getAuth(app);
+      const provider = new TwitterAuthProvider()
+      signInWithPopup(auth,provider)
+      .then((result) => {
+         console.log(result);
+         Navigate("/dasboard")
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+    }
 
   return (
     <div className="auth-container">
@@ -147,6 +162,10 @@ const Login = () => {
            <br />
           <button  type="button" className="auth-btn" 
            onClick={LoginWithFacebook}> Login with Facebook</button>
+           <br />
+           <br />
+           <button type="button" className="auth-btn"
+           onClick={LoginWithTwitter}> Login with Twitter</button>
         </form>
        
       </div>
