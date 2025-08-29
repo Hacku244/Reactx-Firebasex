@@ -34,10 +34,6 @@ import Signup from './Firebase Auth/Signup'
         element:<AddStudent/>
       },
       {
-        path:"studentlist",
-        element:<Studentlist/>
-      },
-      {
         path:"updatestudent",
         element:<UpdateStudent/>
       },
