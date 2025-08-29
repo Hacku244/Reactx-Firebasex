@@ -13,7 +13,7 @@ import Signup from './Firebase Auth/Signup'
   const router = createBrowserRouter([
 
     {
-      path:"/signup",
+      path:"/",
       element:<Signup/>
     },
     {
