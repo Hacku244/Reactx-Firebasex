@@ -67,7 +67,7 @@ export default Login*/
 
 // Login.jsx
 import React, { useState } from "react";
-import { getAuth, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, FacebookAuthProvider, TwitterAuthProvider } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, FacebookAuthProvider, TwitterAuthProvider, GithubAuthProvider } from "firebase/auth";
 import { app } from "../Firebase";
 import { useNavigate } from "react-router-dom";
 import "./Auth.css"; // CSS file
@@ -131,6 +131,20 @@ const Login = () => {
       .catch((error) => {
         console.log(error);
       })
+    }   
+
+  //Github login
+     const LoginWithGithub = () => {
+      const auth = getAuth(app);
+      const provider = new GithubAuthProvider()
+      signInWithPopup(auth,provider)
+      .then((result) => {
+         console.log(result);
+         Navigate("/dasboard")
+      })
+      .catch((error) => {
+        console.log(error);
+      })
     }
 
   return (
@@ -166,6 +180,10 @@ const Login = () => {
            <br />
            <button type="button" className="auth-btn"
            onClick={LoginWithTwitter}> Login with Twitter</button>
+           <br />
+           <br />
+           <button type="button" className="auth-btn"
+           onClick={LoginWithGithub}> Login with Github</button>
         </form>
        
       </div>
